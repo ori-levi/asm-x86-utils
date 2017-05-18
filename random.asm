@@ -5,6 +5,7 @@ proc GenerateRandNum
     ;
     ; NOTE:
     ;   your code MUST contains a variable with the name RNG_Seed with initial seed to the random algorithem.
+    ;   the algorithm describe http://stackoverflow.com/a/43978947/5380472
     ;
     ; Return Value -> AX:
     ;   AX contains the random number.
