@@ -66,3 +66,23 @@ proc GenerateRandNum
 	pop di si dx cx bx
 	ret
 endp GenerateRandNum
+
+proc RandomWithRange
+	LOW_LIMIT	equ	[bp + 6]
+	HIGH_LIMIT	equ	[bp + 4]
+
+	push bp
+	mov bp, sp
+	push dx
+
+	mov dx, HIGH_LIMIT
+	sub dx, LOW_LIMIT
+
+	call GenerateRandNum
+	and ax, dx
+
+	add ax, LOW_LIMIT
+
+	pop dx bp
+	ret 4
+endp RandomWithRange
