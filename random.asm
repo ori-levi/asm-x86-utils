@@ -15,8 +15,8 @@ proc InitRandom
 	push ax es
 
 	mov ax, 40h
-    	mov es, ax
-    	mov ax, [RND_CLOCK]
+	mov es, ax
+	mov ax, [RND_CLOCK]
 	mov [RND_Seed], ax
 
 	pop es ax
@@ -34,7 +34,7 @@ proc GenerateRandNum
 	; Return Value -> AX:
 	;   AX contains the random number.
 	; --------------------------
-	push bx cx si di
+	push bx cx dx si di
 
 	; 32-bit multiplication in 16-bit mode (DX:AX * CX:BX == SI:DI)
 	mov  ax, [RND_Seed]
@@ -63,6 +63,6 @@ proc GenerateRandNum
 	mov  ax, si
 	and  ah, 07Fh
 
-	pop  di si cx bx
+	pop di si dx cx bx
 	ret
 endp GenerateRandNum
