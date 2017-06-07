@@ -15,8 +15,8 @@ proc InitRandom
 	push ax es
 
 	mov ax, 40h
-    mov es, ax
-    mov ax, [RND_CLOCK]
+    	mov es, ax
+    	mov ax, [RND_CLOCK]
 	mov [RND_Seed], ax
 
 	pop es ax
